@@ -9,12 +9,23 @@ services:
       - localprom
     ports:
       - 9090:9090
+  
   node-exporter:
     image: prom/node-exporter
     networks:
       - localprom
     ports:
       - 9100:9100
+
+  blackbox:
+    image: prom/blackbox-exporter:latest
+    privileged: true
+    volumes:
+      - ./blackbox/blackbox.yml:/etc/blackbox_exporter/config.yml
+    ports:
+      - '9115:9115'
+    restart: unless-stopped
+  
   grafana:
     image: grafana/grafana
     volumes:
