@@ -1,0 +1,14 @@
+apiVersion: 1
+contactPoints:
+    - orgId: 1
+      name: Tele Local
+      receivers:
+        - uid: f9f295fa-cb0d-4953-a886-aeeb9f494595
+          type: telegram
+          settings:
+            bottoken: 7092394688:AAEkZh4bLlIb3YgOyYT2aA55xN8fZmMw--4
+            chatid: "-4147459343"
+            disable_notification: false
+            disable_web_page_preview: false
+            protect_content: false
+          disableResolveMessage: false
